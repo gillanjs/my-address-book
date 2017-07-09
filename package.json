@@ -1,0 +1,17 @@
+{
+  "name": "my-address-book",
+  "version": "1.0.0",
+  "description": "An address book app",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-clean-css": "^3.4.2",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-rename": "latest"
+  }
+}
