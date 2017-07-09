@@ -18,8 +18,8 @@ Vue.component('record', {
             noOrganisation: { name: 'No Organisation', detail: { phone: 'N/A', streetnameandno: 'N/A', city: 'N/A', postcode: 'N/A' } }
         };
     },
-    template: `
-
+    template: 
+                `
 
             <article class ="message" >
             <div class ="message-header">

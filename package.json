@@ -12,6 +12,7 @@
     "gulp-connect": "latest",
     "gulp-uglify": "latest",
     "gulp-util": "latest",
-    "gulp-rename": "latest"
+    "gulp-rename": "latest",
+	"pump": "latest"
   }
 }
