@@ -8,22 +8,12 @@ var rename = require('gulp-rename');
 var pump = require('pump');
 
 gulp.task('js', function() {
-  return gulp.src('scripts/*.js')
-  .pipe(uglify())
+  gulp.src('scripts/*.js')
+  /*.pipe(uglify())*/
   .pipe(concat('script.js'))
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('assets'))
   .pipe(connect.reload())
-});
-
-gulp.task('compress', function (cb) {
-  pump([
-        gulp.src('scripts/*.js'),
-        uglify(),
-        gulp.dest('assets')
-    ],
-    cb
-  );
 });
 
 gulp.task('css', function() {
