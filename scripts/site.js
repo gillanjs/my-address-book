@@ -1,8 +1,3 @@
-// JavaScript source code
-
-
-
-
 Vue.component('record', {
     props: ['name', 'detail', 'organisation', 'options', 'selected', 'object'],
     data: function () {
@@ -18,24 +13,24 @@ Vue.component('record', {
             noOrganisation: { name: 'No Organisation', detail: { phone: 'N/A', streetnameandno: 'N/A', city: 'N/A', postcode: 'N/A' } }
         };
     },
-    template: 
-                `
+    //TODO remove <brs> in below template
+    template:
+            `<article class ="message" >
 
-            <article class ="message" >
-            <div class ="message-header">
-            <a @click="expandDetail">{{name}} at {{organisation.name}}</a>
+                <div class ="message-header">
+                    <a @click="expandDetail">{{name}} at {{organisation.name}}</a>
+                    <button @click="$emit('remove')" class ="delete "></button>
+                </div>
 
-                <button @click="$emit('remove')" class ="delete "></button>
-            </div>
-            <div class ="message-body" v-show="detailVisible">
-            Name: {{name}} <br>
-            Organisation: {{organisation.name}} <br>
-            Phone: {{detail.phone}} <br>
-            No.& Street Name: {{detail.streetnameandno}} <br>
-            City: {{detail.city}} <br>
-            Postcode: {{detail.postcode}} <br>
-            <button @click="editRecord" class="button">Edit Details</button>
-            <br><br>
+                <div class ="message-body" v-show="detailVisible">
+                    Name: {{name}} <br>
+                    Organisation: {{organisation.name}} <br>
+                    Phone: {{detail.phone}} <br>
+                    No.& Street Name: {{detail.streetnameandno}} <br>
+                    City: {{detail.city}} <br>
+                    Postcode: {{detail.postcode}} <br>
+                    <button @click="editRecord" class="button">Edit Details</button>
+                    <br><br>
             Update Organisation:
 
             <select v-model="selectedlocal" @change="$emit('selectedchanged',selectedlocal,object,organisation)">
@@ -73,7 +68,7 @@ Vue.component('record', {
             </div>
             </div>
 
-        </article>
+            </article>
 
   `,
     methods: {
