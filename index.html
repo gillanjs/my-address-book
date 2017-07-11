@@ -33,9 +33,11 @@
 
             Show create person form:
 
+            <!--create a checkbox, which toggles person input area-->
             <input @click="toggleCreatePersonArea" type="checkbox"
                 class="checkbox" name="showCreateArea">
 
+            <!--create inputs for name, phone no. etc.-->            
             <input v-show="createShow" class="input"
                 v-model="name" placeholder="Name*">
 
@@ -51,11 +53,15 @@
             <input v-show="createShow" class="input" 
                 v-model="postcode" placeholder="Postcode">
 
+            <!--button which adds a person to the records array-->    
             <button v-show="createShow" class="button" 
                 @click="createPerson">Create</button>
 
             <h2>Organisations:</h2>
             
+            <!--organisationrecord below is used to display a number of 
+                'organisationrecord' template instances for each member 
+                of the organisations array in the Vue instance data-->
             <organisationrecord 
                 v-for="(record, index) in organisations" 
                 :key="record.id" 
@@ -72,9 +78,11 @@
             
             Show create organisation form: 
             
+            <!--create a checkbox, which toggles organisation input area-->
             <input @click="toggleCreateOrgArea" type="checkbox" 
                 class="checkbox" name="showCreateOrgArea">
-
+            
+            <!--create inputs for name, phone no. etc.-->     
             <input v-show="createOrgShow" class="input" 
                 v-model="nameOrg" placeholder="Name*">
 
@@ -90,6 +98,7 @@
             <input v-show="createOrgShow" class="input" 
                 v-model="postcodeOrg" placeholder="Postcode">
 
+            <!--button which adds an organisation to the organisations array-->    
             <button v-show="createOrgShow" class="button" 
                 @click="createOrganisation">Create</button>
 
