@@ -10,7 +10,6 @@
 <body>
     <div id="address-book-app" class="container">
         <h1>Address book app </h1>
-        <br>
         <h2>People:</h2>
         <record  v-for="(record, index)  in records" :key="record.id" v-bind:object="record" v-bind:name="record.name"v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="records.splice(index, 1)" v-on:update="updateRecord"  v-on:selectedchanged="someMethod"></record>
         Show create person form: <input @click="toggleCreatePersonArea" type="checkbox" class="checkbox" name="showCreateArea">
@@ -20,7 +19,6 @@
         <input v-show="createShow" class="input" v-model="city" placeholder="City">
         <input v-show="createShow" class="input" v-model="postcode" placeholder="Postcode">
         <button v-show="createShow" class="button" @click="createPerson">Create</button>
-        <br><br>
         <h2>Organisations:</h2>
         
         <organisationrecord v-for="(record, index) in organisations" :key="record.id" v-bind:object="record" v-bind:name="record.name" v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="organisations.splice(index, 1)" v-on:update="updateRecord" v-on:selectedchanged="someMethod"></organisationrecord>
