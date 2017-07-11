@@ -1,39 +1,40 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link href="assets/style.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" rel="stylesheet">
-    <title>Address book app</title>
-</head>
-<body>
-    <div id="address-book-app" class="container">
-        <h1>Address book app </h1>
-        <h2>People:</h2>
-        <record  v-for="(record, index)  in records" :key="record.id" v-bind:object="record" v-bind:name="record.name"v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="records.splice(index, 1)" v-on:update="updateRecord"  v-on:selectedchanged="someMethod"></record>
-        Show create person form: <input @click="toggleCreatePersonArea" type="checkbox" class="checkbox" name="showCreateArea">
-        <input v-show="createShow" class="input" v-model="name" placeholder="Name*">
-        <input v-show="createShow" class="input" v-model="phone" placeholder="Phone">
-        <input v-show="createShow" class="input" v-model="streetNameAndNo" placeholder="Street Name & No.">
-        <input v-show="createShow" class="input" v-model="city" placeholder="City">
-        <input v-show="createShow" class="input" v-model="postcode" placeholder="Postcode">
-        <button v-show="createShow" class="button" @click="createPerson">Create</button>
-        <h2>Organisations:</h2>
-        
-        <organisationrecord v-for="(record, index) in organisations" :key="record.id" v-bind:object="record" v-bind:name="record.name" v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="organisations.splice(index, 1)" v-on:update="updateRecord" v-on:selectedchanged="someMethod"></organisationrecord>
-        Show create organisation form: <input @click="toggleCreateOrgArea" type="checkbox" class="checkbox" name="showCreateOrgArea">
-        <input v-show="createOrgShow" class="input" v-model="nameOrg" placeholder="Name*">
-        <input v-show="createOrgShow" class="input" v-model="phoneOrg" placeholder="Phone">
-        <input v-show="createOrgShow" class="input" v-model="streetNameAndNoOrg" placeholder="Street Name & No.">
-        <input v-show="createOrgShow" class="input" v-model="cityOrg" placeholder="City">
-        <input v-show="createOrgShow" class="input" v-model="postcodeOrg" placeholder="Postcode">
-        <button v-show="createOrgShow" class="button" @click="createOrganisation">Create</button>
+    <head>
+        <meta charset="utf-8" />
+        <link href="assets/style.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" rel="stylesheet">
+        <title>Address book app</title>
+    </head>
+    <body>
+        <div id="address-book-app" class="container"> <!--The id is important as it signals the use of a Vue instance-->
+            <h1>Address book app </h1>
+            <h2>People:</h2>
+            <record  v-for="(record, index)  in records" :key="record.id" v-bind:object="record" v-bind:name="record.name"v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="records.splice(index, 1)" v-on:update="updateRecord"  v-on:selectedchanged="someMethod"></record>
+            Show create person form: <input @click="toggleCreatePersonArea" type="checkbox" class="checkbox" name="showCreateArea">
+            <input v-show="createShow" class="input" v-model="name" placeholder="Name*">
+            <input v-show="createShow" class="input" v-model="phone" placeholder="Phone">
+            <input v-show="createShow" class="input" v-model="streetNameAndNo" placeholder="Street Name & No.">
+            <input v-show="createShow" class="input" v-model="city" placeholder="City">
+            <input v-show="createShow" class="input" v-model="postcode" placeholder="Postcode">
+            <button v-show="createShow" class="button" @click="createPerson">Create</button>
+            <h2>Organisations:</h2>
+            
+            <organisationrecord v-for="(record, index) in organisations" :key="record.id" v-bind:object="record" v-bind:name="record.name" v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="organisations.splice(index, 1)" v-on:update="updateRecord" v-on:selectedchanged="someMethod"></organisationrecord>
+            Show create organisation form: <input @click="toggleCreateOrgArea" type="checkbox" class="checkbox" name="showCreateOrgArea">
+            <input v-show="createOrgShow" class="input" v-model="nameOrg" placeholder="Name*">
+            <input v-show="createOrgShow" class="input" v-model="phoneOrg" placeholder="Phone">
+            <input v-show="createOrgShow" class="input" v-model="streetNameAndNoOrg" placeholder="Street Name & No.">
+            <input v-show="createOrgShow" class="input" v-model="cityOrg" placeholder="City">
+            <input v-show="createOrgShow" class="input" v-model="postcodeOrg" placeholder="Postcode">
+            <button v-show="createOrgShow" class="button" @click="createOrganisation">Create</button>
 
 
         </div>
 
         <script src="https://unpkg.com/vue"></script>
         <script src="assets/script.js"></script>
-</body>
+
+    </body>
 </html>
