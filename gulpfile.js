@@ -11,7 +11,7 @@ gulp.task('js', function() {
   gulp.src('scripts/*.js')
   /*.pipe(uglify())*/
   .pipe(concat('script.js'))
-  .pipe(rename({ suffix: '.min' }))
+  /*.pipe(rename({ suffix: '.min' }))*/
   .pipe(gulp.dest('assets'))
   .pipe(connect.reload())
 });
