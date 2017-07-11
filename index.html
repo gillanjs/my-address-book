@@ -11,7 +11,18 @@
         <div id="address-book-app" class="container"> <!--The id is important as it signals the use of a Vue instance-->
             <h1>Address book app </h1>
             <h2>People:</h2>
-            <record  v-for="(record, index)  in records" :key="record.id" v-bind:object="record" v-bind:name="record.name"v-bind:detail="record.detail" v-bind:organisation="record.organisation" v-bind:options="organisations" v-bind:selected="selected" v-on:remove="records.splice(index, 1)" v-on:update="updateRecord"  v-on:selectedchanged="someMethod"></record>
+
+            <record  v-for="(record, index)  in records" :key="record.id" 
+                v-bind:object="record" v-bind:name="record.name"
+                v-bind:detail="record.detail" 
+                v-bind:organisation="record.organisation"
+                v-bind:options="organisations" v-bind:selected="selected"
+                v-on:remove="records.splice(index, 1)"
+                v-on:update="updateRecord" 
+                v-on:selectedchanged="someMethod">
+            </record>
+
+
             Show create person form: <input @click="toggleCreatePersonArea" type="checkbox" class="checkbox" name="showCreateArea">
             <input v-show="createShow" class="input" v-model="name" placeholder="Name*">
             <input v-show="createShow" class="input" v-model="phone" placeholder="Phone">
