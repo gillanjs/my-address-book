@@ -8,11 +8,16 @@
         <title>Address book app</title>
     </head>
     <body>
-        <div id="address-book-app" class="container"> <!--The id is important as it signals the use of a Vue instance-->
+
+        <!--The id is important as it signals the use of a Vue instance-->
+        <div id="address-book-app" class="container"> 
             <h1>Address book app </h1>
             <h2>People:</h2>
-
-            <record  
+            
+            <!--record below is used to display a number of 'record' template 
+                instances for each member of the records array in the 
+                Vue instance data-->
+            <record
                 v-for="(record, index)  in records" 
                 :key="record.id" 
                 v-bind:object="record" 
