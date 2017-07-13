@@ -304,15 +304,8 @@ new Vue({
         selected: '',
         createShow: false,
         createOrgShow: false,
-        records: [/*
-            { name: 'James Donaldson', detail: { phone: '00000 000 000', streetnameandno:'99 Default Street',city:'Edinburgh',postcode: 'AA99 9AA'}, organisation: {}},
-            { name: 'Lucy Rogers', detail: { phone: '01000 000 000', streetnameandno: '98 Default Street', city: 'Edinburgh', postcode: 'BX99 9AA'}, organisation: {} },
-            { name: 'James Jameson', detail: { phone: '02000 000 000', streetnameandno: '97 Default Street', city: 'Edinburgh', postcode: 'BB99 9AA'}, organisation: {} }*/
-        ],
-        organisations: [
-           /* { name: 'Something Corp.', detail: { phone: '03000 000 000', streetnameandno: '99 Something Street', city: 'Edinburgh', postcode: 'KK99 9AA' }, staff: [] },
-            { name: 'Default Inc.', detail: { phone: '04000 000 000', streetnameandno: '99 Other Street', city: 'Edinburgh', postcode: 'CC99 9AA' }, staff: [] }*/
-        ]
+        records: [],
+        organisations: []
 
         
     },
