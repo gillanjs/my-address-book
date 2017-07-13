@@ -25,11 +25,8 @@ Vue.component('record', {
         `<article class ="message" >
 
             <div class ="message-header">
-
                 <a @click="expandDetail">{{name}} at {{organisation.name}}</a>
-
                 <button @click="$emit('remove')" class ="delete "></button>
-
             </div>
 
             <div class ="message-body" v-show="detailVisible">
@@ -45,7 +42,7 @@ Vue.component('record', {
                     @click="editRecord" 
                     class="button">
                 
-                Edit Details
+                    Edit Details
                 
                 </button>
 
