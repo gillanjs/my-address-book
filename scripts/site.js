@@ -11,7 +11,13 @@ Vue.component('record', {
             editedStreetNameAndNo: this.detail.streetnameandno,
             editedCity: this.detail.city,
             editedPostcode: this.detail.postcode,
-            noOrganisation: { name: 'No Organisation', detail: { phone: 'N/A', streetnameandno: 'N/A', city: 'N/A', postcode: 'N/A' } }
+            noOrganisation: { 
+                name: 'No Organisation', 
+                detail: { 
+                    phone: 'N/A', 
+                    streetnameandno: 'N/A', 
+                    city: 'N/A', 
+                    postcode: 'N/A' }}
         };
     },
     //TODO remove <brs> in below template
@@ -19,18 +25,30 @@ Vue.component('record', {
         `<article class ="message" >
 
             <div class ="message-header">
+
                 <a @click="expandDetail">{{name}} at {{organisation.name}}</a>
+
                 <button @click="$emit('remove')" class ="delete "></button>
+
             </div>
 
             <div class ="message-body" v-show="detailVisible">
+
                 Name: {{name}} <br>
                 Organisation: {{organisation.name}} <br>
                 Phone: {{detail.phone}} <br>
                 No.& Street Name: {{detail.streetnameandno}} <br>
                 City: {{detail.city}} <br>
                 Postcode: {{detail.postcode}} <br>
-                <button @click="editRecord" class="button">Edit Details</button>
+
+                <button 
+                    @click="editRecord" 
+                    class="button">
+                
+                Edit Details
+                
+                </button>
+
                 <br><br>
 
                 Update Organisation:
@@ -60,24 +78,52 @@ Vue.component('record', {
                     </header>
 
                     <section class ="modal-card-body">
-                        Name:<input class ="input" v-model="editedName"
+
+                        Name:
+                        
+                        <input 
+                            class ="input" 
+                            v-model="editedName"
                             placeholder="Name*">
 
-                        Phone:<input class ="input" v-model="editedPhone"
+                        Phone:
+                        
+                        <input 
+                            class ="input" 
+                            v-model="editedPhone"
                             placeholder="Phone">
 
-                        Street Name & No.:<input class ="input" v-model="editedStreetNameAndNo"
+                        Street Name & No.:
+                        
+                        <input 
+                            class ="input" 
+                            v-model="editedStreetNameAndNo"
                             placeholder="Street Name & No.">
 
-                        City: <input class ="input" v-model="editedCity"
+                        City: 
+                        
+                        <input 
+                            class ="input" 
+                            v-model="editedCity"
                             placeholder="City">
 
-                        Postcode: <input class ="input" v-model="editedPostcode"
+                        Postcode: 
+                        
+                        <input 
+                            class ="input" 
+                            v-model="editedPostcode"
                             placeholder="Postcode">
+
                     </section>
 
                     <footer class ="modal-card-foot">
-                    <a class ="button is-success" @click="updateRecord">Save changes</a>
+
+                    <a class ="button is-success" @click="updateRecord">
+                    
+                    Save changes
+                    
+                    </a>
+
                     <a class ="button" @click="editRecord">Cancel</a>
                     </footer>
                 </div>
