@@ -306,20 +306,9 @@ new Vue({
         createOrgShow: false,
         records: [],
         organisations: []
-
-        
     },
     mounted: function () {
         if (localStorage.getItem("savedPeople") === null) {
-            //sets up default organisations immediately after page set up
-            /*
-            this.records[0].organisation = this.organisations[1];
-            this.organisations[1].staff.push(this.records[0]);
-            this.records[1].organisation = this.organisations[0];
-            this.organisations[0].staff.push(this.records[1]);
-            this.records[2].organisation = this.organisations[1];
-            this.organisations[1].staff.push(this.records[2]);
-            */
             this.saveRecords();
         }
         else {
@@ -327,13 +316,8 @@ new Vue({
             var savedPeople = JSON.parse(localStorage.getItem("savedPeople"));
             for (i = 0; i < savedPeople.length; i++) {
                 this.records.push(savedPeople[i]);
-
-                //alert(savedNoteArray[i].name);
             }
         }
-
-
-
     },
     methods: {
         createPerson: function () {
