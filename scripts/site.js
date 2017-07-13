@@ -322,8 +322,14 @@ new Vue({
     methods: {
         createPerson: function () {
             if (this.name !== '') {
-                this.records.push({ name: this.name, detail: { phone: this.phone, streetnameandno: this.streetNameAndNo, city: this.city, postcode: this.postcode }, organisation: {name: 'None'} });
-
+                this.records.push({ 
+                    name: this.name, 
+                    detail: {
+                        phone: this.phone, 
+                        streetnameandno: this.streetNameAndNo, 
+                        city: this.city, 
+                        postcode: this.postcode}, 
+                    organisation: {name: 'None'}});
                 this.name = '';
                 this.phone = '';
                 this.streetNameAndNo = '';
@@ -335,19 +341,22 @@ new Vue({
         },
         createOrganisation: function (){
             if (this.nameOrg !== '') {
-                this.organisations.push({ name: this.nameOrg, detail: { phone: this.phoneOrg, streetnameandno: this.streetNameAndNoOrg, city: this.cityOrg, postcode: this.postcodeOrg }, staff:[]});
-
+                this.organisations.push({ 
+                    name: this.nameOrg, 
+                    detail: { 
+                        phone: this.phoneOrg, 
+                        streetnameandno: this.streetNameAndNoOrg, 
+                        city: this.cityOrg, 
+                        postcode: this.postcodeOrg }, 
+                    staff:[]});
                 this.nameOrg = '';
                 this.phoneOrg = '';
                 this.streetNameAndNoOrg = '';
                 this.cityOrg = '';
                 this.postcodeOrg = '';
-
             }
         },
         someMethod: function (arg,object,organisation) {
-            //alert(arg.name + object.name);
-
             object.organisation = arg;
             var alreadyInArray = false;
 
@@ -366,12 +375,16 @@ new Vue({
             organisation.staff.splice(indexAt, 1);
 
             if (arg.name !== 'No Organisation' && !alreadyInArray) {
-                
                 arg.staff.push(object);
             }
-
         },
-        updateRecord: function (newName, newPhone, newNoAndStreet, newCity, newPostcode, record) {
+        updateRecord: function (
+            newName, 
+            newPhone, 
+            newNoAndStreet, 
+            newCity, 
+            newPostcode, 
+            record) {
             record.name = newName;
             record.detail.phone = newPhone;
             record.detail.streetnameandno = newNoAndStreet;
@@ -386,7 +399,6 @@ new Vue({
         },
         saveRecords: function () {
             localStorage.removeItem("savedPeople");
-            //localStorage.setItem("savedRecords", [this.records, this.organisations]);
             localStorage.setItem("savedPeople", JSON.stringify(this.records));
         }
 
