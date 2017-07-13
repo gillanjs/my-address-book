@@ -388,6 +388,9 @@ new Vue({
             record.detail.city = newCity;
             record.detail.postcode = newPostcode;
         },
+        removeRecord: function(index){
+            console.log("Works at " + index);
+        },
         toggleCreatePersonArea: function(){
             this.createShow = !this.createShow;
         },

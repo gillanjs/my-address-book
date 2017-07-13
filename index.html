@@ -26,7 +26,7 @@
                 v-bind:organisation="record.organisation"
                 v-bind:options="organisations" 
                 v-bind:selected="selected"
-                v-on:remove="records.splice(index, 1)"
+                v-on:remove="removeRecord(index)"
                 v-on:update="updateRecord" 
                 v-on:selectedchanged="someMethod">
             </record>
