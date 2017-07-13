@@ -178,59 +178,88 @@ Vue.component('organisationrecord', {
                     postcode: 'N/A' }}
         };
     },
-    template: `
+    template: 
+       `<article class ="message" >
 
-
-            <article class ="message" >
             <div class ="message-header">
-            <a @click="expandDetail">{{name}}</a>
-
+                <a @click="expandDetail">{{name}}</a>
                 <button @click="$emit('remove')" class ="delete "></button>
             </div>
+
             <div class ="message-body" v-show="detailVisible">
-            Name: {{name}} <br>
-            Phone: {{detail.phone}} <br>
-            No.& Street Name: {{detail.streetnameandno}} <br>
-            City: {{detail.city}} <br>
-            Postcode: {{detail.postcode}} <br>
-            <button @click="editRecord" class ="button">Edit Details</button> <br><br>
+                Name: {{name}} <br>
+                Phone: {{detail.phone}} <br>
+                No.& Street Name: {{detail.streetnameandno}} <br>
+                City: {{detail.city}} <br>
+                Postcode: {{detail.postcode}} <br>
+                <button @click="editRecord" class ="button">Edit Details</button> <br><br>
 
-            Person(s) at organisation:
-            <br>
-            <span v-for="staff in object.staff">{{staff.name}} <br> </span>
+                Person(s) at organisation:
+                <br>
+                <span v-for="staff in object.staff">{{staff.name}} <br> </span>
             </div>
-
-
 
             <div class ="modal is-active" v-show="modalVisible">
-            <div class ="modal-background"></div>
-            <div class ="modal-card">
-            <header class ="modal-card-head">
-            <p class ="modal-card-title">Edit</p>
-            <button class ="delete" @click="editRecord"></button>
-            </header>
-            <section class ="modal-card-body">
-            Name:<input class ="input" v-model="editedName"
-             placeholder="Name*">
-            Phone:<input class ="input" v-model="editedPhone"
-             placeholder="Phone">
-            Street Name & No.:<input class ="input" v-model="editedStreetNameAndNo"
-             placeholder="Street Name & No.">
-            City: <input class ="input" v-model="editedCity"
-             placeholder="City">
-             Postcode: <input class ="input" v-model="editedPostcode"
-             placeholder="Postcode">
-            </section>
-            <footer class ="modal-card-foot">
-            <a class ="button is-success" @click="updateRecord">Save changes</a>
-            <a class ="button" @click="editRecord">Cancel</a>
-            </footer>
-            </div>
-            </div>
+                <div class ="modal-background">
+                </div>
+                <div class ="modal-card">
+                    <header class ="modal-card-head">
+                        <p class ="modal-card-title">Edit</p>
+                        <button class ="delete" @click="editRecord"></button>
+                    </header>
 
-        </article>
+                    <section class ="modal-card-body">
+                    
+                    Name:
+                    
+                    <input 
+                        class ="input" 
+                        v-model="editedName"
+                        placeholder="Name*">
 
-  `,
+                    Phone:
+                    
+                    <input 
+                        class ="input" 
+                        v-model="editedPhone"
+                        placeholder="Phone">
+
+                    Street Name & No.:
+                    
+                    <input 
+                        class ="input" 
+                        v-model="editedStreetNameAndNo"
+                        placeholder="Street Name & No.">
+
+                    City: 
+                    
+                    <input 
+                        class ="input" 
+                        v-model="editedCity"
+                        placeholder="City">
+
+                    Postcode: 
+                    
+                    <input 
+                        class ="input" 
+                        v-model="editedPostcode"
+                        placeholder="Postcode">
+
+                    </section>
+                    <footer class ="modal-card-foot">
+                        <a 
+                            class ="button is-success" 
+                            @click="updateRecord">
+
+                            Save changes
+                            
+                        </a>
+
+                        <a class ="button" @click="editRecord">Cancel</a>
+                    </footer>
+                </div>
+            </div>
+        </article>`,
     methods: {
         expandDetail: function () {
             this.detailVisible = !this.detailVisible;
