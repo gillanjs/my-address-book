@@ -273,7 +273,14 @@ Vue.component('organisationrecord', {
             this.modalVisible = !this.modalVisible;
         },
         updateRecord: function () {
-            this.$emit('update', this.editedName, this.editedPhone, this.editedStreetNameAndNo, this.editedCity, this.editedPostcode, this.object);
+            this.$emit(
+                'update', 
+                this.editedName, 
+                this.editedPhone, 
+                this.editedStreetNameAndNo, 
+                this.editedCity, 
+                this.editedPostcode, 
+                this.object);
             this.editRecord();
         }
 
