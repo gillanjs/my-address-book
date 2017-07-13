@@ -142,7 +142,14 @@ Vue.component('record', {
             this.modalVisible = !this.modalVisible;
         },
         updateRecord: function () {
-            this.$emit('update', this.editedName, this.editedPhone, this.editedStreetNameAndNo, this.editedCity, this.editedPostcode, this.object);
+            this.$emit(
+                'update', 
+                this.editedName, 
+                this.editedPhone, 
+                this.editedStreetNameAndNo, 
+                this.editedCity, 
+                this.editedPostcode, 
+                this.object);
             this.editRecord();
         }
 
@@ -162,7 +169,13 @@ Vue.component('organisationrecord', {
             editedStreetNameAndNo: this.detail.streetnameandno,
             editedCity: this.detail.city,
             editedPostcode: this.detail.postcode,
-            noOrganisation: { name: 'No Organisation', detail: { phone: 'N/A', streetnameandno: 'N/A', city: 'N/A', postcode: 'N/A' } }
+            noOrganisation: { 
+                name: 'No Organisation', 
+                detail: { 
+                    phone: 'N/A', 
+                    streetnameandno: 'N/A', 
+                    city: 'N/A',
+                    postcode: 'N/A' }}
         };
     },
     template: `
