@@ -21,9 +21,8 @@ Vue.component('record', {
         };
     },
     //TODO remove <brs> in below template
-    template:
+    template:        
         `<article class ="message" >
-
             <div class ="message-header">
                 <a @click="expandDetail">{{name}} at {{organisation.name}}</a>
                 <button @click="$emit('remove')" class ="delete "></button>
@@ -62,68 +61,6 @@ Vue.component('record', {
                         {{ option.name }}
                     </option>
                 </select>
-            </div>
-
-            <div class ="modal is-active" v-show="modalVisible">
-                <div class ="modal-background">
-                </div>
-                <div class ="modal-card">
-
-                    <header class ="modal-card-head">
-                        <p class ="modal-card-title">Edit</p>
-                        <button class ="delete" @click="editRecord"></button>
-                    </header>
-
-                    <section class ="modal-card-body">
-
-                        Name:
-                        
-                        <input 
-                            class ="input" 
-                            v-model="editedName"
-                            placeholder="Name*">
-
-                        Phone:
-                        
-                        <input 
-                            class ="input" 
-                            v-model="editedPhone"
-                            placeholder="Phone">
-
-                        Street Name & No.:
-                        
-                        <input 
-                            class ="input" 
-                            v-model="editedStreetNameAndNo"
-                            placeholder="Street Name & No.">
-
-                        City: 
-                        
-                        <input 
-                            class ="input" 
-                            v-model="editedCity"
-                            placeholder="City">
-
-                        Postcode: 
-                        
-                        <input 
-                            class ="input" 
-                            v-model="editedPostcode"
-                            placeholder="Postcode">
-
-                    </section>
-
-                    <footer class ="modal-card-foot">
-
-                    <a class ="button is-success" @click="updateRecord">
-                    
-                    Save changes
-                    
-                    </a>
-
-                    <a class ="button" @click="editRecord">Cancel</a>
-                    </footer>
-                </div>
             </div>
         </article>`,
     methods: {
