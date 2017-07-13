@@ -1,3 +1,4 @@
+
 Vue.component('record', {
     props: ['name', 'detail', 'organisation', 'options', 'selected', 'object'],
     data: function () {
@@ -33,7 +34,14 @@ Vue.component('record', {
                 <br><br>
 
                 Update Organisation:
-                <select v-model="selectedlocal" @change="$emit('selectedchanged',selectedlocal,object,organisation)">
+                <select 
+                    v-model="selectedlocal"
+                    @change="$emit(
+                        'selectedchanged',
+                        selectedlocal,
+                        object,
+                        organisation)">
+
                     <option v-bind:value="noOrganisation">None</option>
                     <option v-for="option in options" v-bind:value="option">
                         {{ option.name }}
